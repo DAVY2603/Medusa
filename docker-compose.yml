@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:14-alpine
+    container_name: medusa_postgres
+    environment:
+      POSTGRES_USER: medusa
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: medusa_b2b
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U medusa"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: medusa_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # PgAdmin (Interface de gestion PostgreSQL)
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: medusa_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@medusa.local
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_PROXY_X_FORWARDED_PROTO: "http"
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+
+volumes:
+  postgres_data:
+  redis_data:
+  pgadmin_data:
+
+# Utilisation:
+# docker-compose up -d          # Démarrer tous les services
+# docker-compose down           # Arrêter tous les services
+# docker-compose logs -f        # Voir les logs
+# docker-compose ps             # Statut des services

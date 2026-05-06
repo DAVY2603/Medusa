@@ -1,0 +1,17 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "outputDirectory": ".medusa/server",
+  "installCommand": "npm install",
+  "framework": "medusa",
+  "env": [
+    "DATABASE_URL",
+    "MEDUSA_ADMIN_ONBOARDING_DISABLED",
+    "NODE_ENV"
+  ],
+  "functions": {
+    "api/**": {
+      "maxDuration": 60
+    }
+  }
+}

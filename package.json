@@ -9,7 +9,8 @@
     "start": "medusa start",
     "seed": "medusa seed -f data/seed.json",
     "migrate": "medusa migrations run",
-    "logs": "tail -f .medusa/server.log"
+    "logs": "tail -f .medusa/server.log",
+    "vercel-build": "npm run migrate && npm run build"
   },
   "keywords": [
     "medusa",
@@ -20,9 +21,20 @@
   ],
   "author": "DAVY2603",
   "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "@medusajs/medusa": "^latest",
+    "@medusajs/admin": "^latest",
+    "pg": "^8.11.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
   }
 }

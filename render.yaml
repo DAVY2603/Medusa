@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: medusa-api
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /admin/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: DATABASE_URL
+        fromDatabase:
+          name: medusa-postgres
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          name: medusa-redis
+          property: connectionString
+
+  - type: pserv
+    name: medusa-postgres
+    ipWhitelist: []
+    plan: free
+
+  - type: redis
+    name: medusa-redis
+    plan: free

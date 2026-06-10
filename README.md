@@ -1,97 +1,81 @@
-# Medusa B2B E-Commerce Platform
+# Medusa - Plateforme B2B
 
-Une plateforme e-commerce B2B moderne construite avec **Medusa**, dédiée à la vente de produits en ligne aux entreprises.
+Bienvenue sur Medusa, une plateforme de commerce électronique B2B (Business-to-Business) complète et moderne.
 
-## 🎯 Objectifs
+## 🎯 À propos du projet
 
-- Catalogue de produits B2B complet
-- Gestion des clients professionnels
-- Système de commande professionnel
-- Intégration logistique
-- Dashboard d'administration
-- API REST complète
+Medusa est une solution e-commerce B2B conçue pour les entreprises qui souhaitent:
+- Gérer leurs catalogues de produits complexes
+- Offrir des tarifs personnalisés par client
+- Automatiser les processus de commande
+- Fournir une expérience de shopping B2B professionnelle
 
-## 🛠️ Stack Technologique
+## ✨ Fonctionnalités
 
-- **Backend:** Medusa.js (Node.js)
-- **Frontend:** React/Next.js (à configurer)
-- **Base de données:** PostgreSQL
-- **Cache:** Redis
-- **Hébergement:** À définir
+- Gestion avancée des produits et catalogues
+- Système de tarification B2B flexible
+- Gestion des clients et des comptes professionnels
+- Panier et processus de commande optimisés
+- Intégrations commerciales
+- API RESTful complète
 
-## 📦 Structure du Projet
+## 🚀 Démarrage rapide
 
-```
-medusa-b2b/
-├── backend/          # API Medusa
-├── admin/            # Dashboard d'administration (Medusa Admin)
-├── storefront/       # Vitrine client (Next.js)
-├── docs/             # Documentation
-└── docker-compose.yml
-```
+### Prérequis
+- Node.js 16+
+- npm ou yarn
+- Base de données compatible (PostgreSQL)
 
-## 🚀 Installation Rapide
+### Installation
 
 ```bash
-# Installation de Medusa CLI
-npm install -g @medusajs/medusa-cli
-
-# Créer un nouveau projet Medusa
-medusa new medusa-b2b --seed
+# Cloner le référentiel
+git clone https://github.com/DAVY2603/Medusa.git
+cd Medusa
 
 # Installer les dépendances
-cd medusa-b2b
 npm install
+
+# Configuration
+npm run setup
 
 # Démarrer le serveur de développement
 npm run dev
 ```
 
-## 📋 Prérequis
+## 📋 Structure du projet
 
-- Node.js 14+
-- PostgreSQL 10+
-- Redis (optionnel mais recommandé)
-- npm ou yarn
-
-## 🔧 Configuration Initiale
-
-À faire :
-- [ ] Configurer la base de données PostgreSQL
-- [ ] Configurer les variables d'environnement (.env)
-- [ ] Mettre en place l'authentification B2B
-- [ ] Configurer les catégories de produits
-- [ ] Ajouter des plugins personnalisés
-- [ ] Configurer les paiements (Stripe, etc.)
-- [ ] Mise en place du système de tarification B2B
-
-## 📚 Documentation Utile
-
-- [Documentation Medusa](https://docs.medusajs.com/)
-- [API Reference](https://docs.medusajs.com/api)
-- [Plugins](https://github.com/medusajs/medusa/tree/master/packages/plugins)
-
-## 👨‍💻 Développement
-
-```bash
-# Démarrer le projet en mode développement
-npm run dev
-
-# Accéder à l'admin
-http://localhost:9000/admin
-
-# API disponible à
-http://localhost:9000
 ```
+Medusa/
+├── src/              # Code source
+├── tests/            # Tests unitaires et d'intégration
+├── docs/             # Documentation
+├── config/           # Fichiers de configuration
+└── public/           # Fichiers publics
+```
+
+## 🛠 Technologie
+
+- **Backend**: Node.js / TypeScript
+- **Base de données**: PostgreSQL
+- **API**: REST
+
+## 📖 Documentation
+
+Pour plus d'informations, consultez la [documentation complète](./docs/README.md).
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues! Veuillez consulter notre [guide de contribution](./CONTRIBUTING.md) pour plus de détails.
+
+## 📝 Licence
+
+Ce projet est sous licence [MIT](./LICENSE).
 
 ## 📞 Support
 
-Pour toute question sur Medusa, consultez la [documentation officielle](https://docs.medusajs.com/) ou le [forum communautaire](https://discord.gg/medusajs).
-
-## 📄 Licence
-
-À définir
+Pour toute question ou problème, veuillez ouvrir une [issue](https://github.com/DAVY2603/Medusa/issues).
 
 ---
 
-**Maintenu par:** DAVY2603
+**Dernière mise à jour**: Juin 2026
